@@ -44,7 +44,15 @@ function App() {
       </div>
       <div className={styles.inputSection+" "+(loadingImages?styles.freeze:"")}>
         <label htmlFor="images" className={`${styles.imageInputLabel}`}>Add images</label>
-        <input type="file" name="images" id="images" onChange={getImage} multiple style={{display: "none"}}/>
+        <input 
+          type="file" 
+          name="images" 
+          id="images" 
+          onChange={getImage} 
+          style={{display: "none"}}
+          accept='.png,.jpeg,.jpg,.jfif,.webp'
+          multiple 
+        />
       </div>
     </>
   )
