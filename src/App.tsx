@@ -36,12 +36,15 @@ function App() {
 
   return (
     <>
+    <h1
+      className={`${styles.title}`}
+    >Photo Grid By Ahan</h1>
       <div className={styles.grid}>
         {imageRoster}
       </div>
-      <div className="input-section">
-        {loadingImages? <span>loading...</span>:""}
-        <input type="file" name="images" id="images" onChange={getImage} multiple />
+      <div className={styles.inputSection+" "+(loadingImages?styles.freeze:"")}>
+        <label htmlFor="images" className={`${styles.imageInputLabel}`}>Add images</label>
+        <input type="file" name="images" id="images" onChange={getImage} multiple style={{display: "none"}}/>
       </div>
     </>
   )
